@@ -1,22 +1,57 @@
 import React from "react";
-import Box from "./Box";
+import { Switch, Route, Link } from "react-router-dom";
+import AnimalsList from "./AnimalsList";
+import BoxesList from "./BoxesList";
+
+const Home = () => {
+  return (
+    <div>
+      <h1>This is the home page</h1>
+    </div>
+  );
+};
+
+const Gallery = () => {
+  return (
+    <div>
+      <h1>This is the gallery page</h1>
+    </div>
+  );
+};
+
+const Nav = () => {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/gallery">Gallery</Link>
+        </li>
+        <li>
+          <Link to="/boxes">Boxes</Link>
+        </li>
+        <li>
+          <Link to="/animals">Animals</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
 const Main = () => {
-    return ( 
-        <main>
-        <div>
-        <Box name = "Annika"
-        age = "32"
-        title = "CEO" />
-        <Box name = "Kati"
-        age = "42"
-        title = "designer" />
-        <Box name = "Sammy"
-        age = "35"
-        title = "developer" />
-        </div> 
-        </main>
-    );
+  return (
+    <div>
+      <Nav />
+      <Switch>
+        <Route path="/" exact component={Home}></Route>
+        <Route path="/gallery" component={Gallery}></Route>
+        <Route path="/boxes" component={BoxesList}></Route>
+        <Route path="/animals" component={AnimalsList}></Route>
+      </Switch>
+    </div>
+  );
 };
 
 export default Main;

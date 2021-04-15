@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
 
-const view = () => {
-    return (
-        <div>
-
-        </div>
-    );
+const View = (props) => {
+  return (
+    <section className="view-container">
+      <h2>Check your input </h2>
+      <p>{props.firstName}</p>
+      <p>{props.lastName}</p>
+      <p>{props.phoneNumber}</p>
+      <p>{props.role}</p>
+      <p>{props.message}</p>
+    </section>
+  );
 };
 
-export default view;
+export default View;

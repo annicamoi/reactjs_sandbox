@@ -24,3 +24,11 @@
 .orange {
   background-color: orange;
 }
+
+.orange {
+  background-color: orange;
+}
+
+.active {
+  background-image: url("../assets/img/pacman.png");
+}

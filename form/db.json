@@ -1,0 +1,28 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "firstname": "Annika",
+      "lastname": "Moilanen",
+      "phonenumber": 12345699,
+      "message": "Some really important message",
+      "role": "teacher"
+    },
+    {
+      "id": 2,
+      "firstname": "Leena",
+      "lastname": "Lentoemo",
+      "phonenumber": 12365487,
+      "message": "I want to go back to flying",
+      "role": "student"
+    },
+    {
+      "id": 3,
+      "firstname": "Someone",
+      "lastname": "Else",
+      "phonenumber": 123454545,
+      "message": "I can not focus in this noise",
+      "role": "other"
+    }
+  ]
+}

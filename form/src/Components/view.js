@@ -1,15 +1,28 @@
 import React from "react";
+import "./View.css";
 
-const View = (props) => {
+const View = ({ firstname, lastname, phonenumber, message, role }) => {
   return (
-    <section className="view-container">
-      <h2>Check your input </h2>
-      <p>{props.firstName}</p>
-      <p>{props.lastName}</p>
-      <p>{props.phoneNumber}</p>
-      <p>{props.role}</p>
-      <p>{props.message}</p>
-    </section>
+    <div className="view">
+      <h1>Check your input</h1>
+      <div className="notepad">
+        <p>
+          First name <span>{firstname}</span>
+        </p>
+        <p>
+          Last name <span>{lastname}</span>
+        </p>
+        <p>
+          Phonenumber <span>{phonenumber}</span>
+        </p>
+        <p>
+          Message <span>{message}</span>
+        </p>
+        <p>
+          Role <span>{role}</span>
+        </p>
+      </div>
+    </div>
   );
 };
 

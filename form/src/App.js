@@ -1,59 +1,59 @@
 import React, { Component } from "react";
+
 import Form from "./Components/Form";
 import View from "./Components/View";
 import Popup from "./Components/Popup";
+import NotesList from "./Components/NotesList";
 
 class App extends Component {
   state = {
-    form: {
-      firstName: "",
-      lastName: "",
-      phoneNumber: "",
-      role: "",
+    notes: [],
+    inputData: {
+      firstname: "",
+      lastname: "",
+      phonenumber: "",
       message: "",
+      role: "",
     },
     showPopup: false,
   };
+  componentDidMount() {
+    fetch("http://localhost:3001/notes")
+      .then((response) => response.json())
+      .then((data) => this.setState({ notes: data }));
+  }
 
-  inputHandler = (event) => {
-    let newForm = { ...this.state.form };
-    newForm[event.target.id] = event.target.value;
-    this.setState({ form: newForm });
-    console.log(this.state);
+  changeHandler = (e) => {
+    this.setState({
+      inputData: { ...this.state.inputData, [e.target.name]: e.target.value },
+    });
   };
 
-  showPopupHandler = (event) => {
-    event.preventDefault();
-
-    // Validate form
-
+  popupHandler = (e) => {
     this.setState({ showPopup: true });
+    e.preventDefault();
   };
 
-  closePopupHandler = () => {
-    this.setState({ showPopup: false });
+  sendDataHandler = () => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(this.state.inputData),
+    };
+    fetch("http://localhost:3001/notes", requestOptions);
+    alert("Note is posted", window.location.reload());
   };
+
+  //** this says that take the data from Json */
 
   render() {
     return (
-      <div className="container">
-        <Form input={this.inputHandler} submit={this.showPopupHandler} />
-        <View
-          firstName={this.state.form.firstName}
-          lastName={this.state.form.lastName}
-          phoneNumber={this.state.form.phoneNumber}
-          role={this.state.form.role}
-          message={this.state.form.message}
-        />
+      <div>
+        <Form change={this.changeHandler} submit={this.popupHandler} />
+        <View {...this.state.inputData} />
+        <NotesList notes={this.state.notes} />
         {this.state.showPopup && (
-          <Popup
-            firstName={this.state.form.firstName}
-            lastName={this.state.form.lastName}
-            phoneNumber={this.state.form.phoneNumber}
-            role={this.state.form.role}
-            message={this.state.form.message}
-            backBtn={this.closePopupHandler}
-          />
+          <Popup {...this.state.inputData} submit={this.sendDataHandler} />
         )}
       </div>
     );
@@ -61,3 +61,4 @@ class App extends Component {
 }
 
 export default App;
+

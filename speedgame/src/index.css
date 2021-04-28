@@ -2,14 +2,7 @@
 
 body {
   font-family: "Righteous", cursive;
-  background-image: linear-gradient(
-    to right top,
-    #4d0155,
-    #8e0055,
-    #c12948,
-    #e16031,
-    #eb9a12
-  );
+  background-image: url("./assets/img/14031728.jpg");
   background-attachment: fixed;
   text-align: center;
 }

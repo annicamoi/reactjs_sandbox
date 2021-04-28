@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Circle from "./Components/Circle";
 import GameOver from "./Components/GameOver";
 
@@ -21,13 +21,13 @@ class App extends Component {
     circles: [
       { id: 1, color: "green" },
       { id: 2, color: "yellow" },
-      { id: 3, color: "red" },
-      { id: 4, color: "orange" }
+      { id: 3, color: "orange" },
+      { id: 4, color: "red" },
     ],
     showGameOver: false,
     rounds: 0,
     gameStart: false,
-    clickedOnce: false
+    clickedOnce: false,
   };
 
   timer = undefined;
@@ -91,14 +91,14 @@ class App extends Component {
     if (this.state.score == 0) {
       endScore = `Your score is ${this.state.score} and you can do way better!`;
     } else if (this.state.score >= 1 && this.state.score <= 9) {
-      endScore = `Your score is ${this.state.score} and sorry to disappoint you but you are still hungry!`;
+      endScore = `Your score is ${this.state.score} and sorry to disappoint you but you suck!`;
     } else if (this.state.score >= 10 && this.state.score <= 19) {
       endScore = `Your score is ${this.state.score} and yes, you are the Player of the game!`;
     } else if (this.state.score >= 20) {
-      endScore = `Your score is ${this.state.score} - congratulations, you probably want to change your last name to Pacman!`;
-    };
+      endScore = `Your score is ${this.state.score} - congratulations, you probably want to change your last name to Flaming Flayer!`;
+    }
 
-    this.setState({ endMessage: endScore, });
+    this.setState({ endMessage: endScore });
 
     clearTimeout(this.timer);
     this.setState({ showGameOver: true });
@@ -106,21 +106,35 @@ class App extends Component {
 
   render() {
     const circlesList = this.state.circles.map((c) => {
-      return <Circle id={c.id} key={c.id} color={c.color} click={() => this.clickHandler(c.id)} active={this.state.current === c.id} disabled={this.state.gameStart} />;
+      return (
+        <Circle
+          id={c.id}
+          key={c.id}
+          color={c.color}
+          click={() => this.clickHandler(c.id)}
+          active={this.state.current === c.id}
+          disabled={this.state.gameStart}
+        />
+      );
     });
     return (
       <div>
         <h1>Speedgame</h1>
         <p>Your score is: {this.state.score}</p>
-        <div className="circles">
-          {circlesList}</div>
-        <button onClick={this.startHandler} disabled={this.state.gameStart}>Start</button>
+        <div className="circles">{circlesList}</div>
+        <button onClick={this.startHandler} disabled={this.state.gameStart}>
+          Start
+        </button>
         <button onClick={this.endHandler}>Stop</button>
-        {this.state.showGameOver && <GameOver score={this.state.score} endMessage={this.state.endMessage} />}
+        {this.state.showGameOver && (
+          <GameOver
+            score={this.state.score}
+            endMessage={this.state.endMessage}
+          />
+        )}
       </div>
     );
   }
 }
 
 export default App;
-

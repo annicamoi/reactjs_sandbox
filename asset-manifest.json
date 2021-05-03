@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/reactjs_sandbox/speedgame/static/css/main.8daf5bf6.chunk.css",
+    "main.js": "/reactjs_sandbox/speedgame/static/js/main.2c30c271.chunk.js",
+    "main.js.map": "/reactjs_sandbox/speedgame/static/js/main.2c30c271.chunk.js.map",
+    "runtime-main.js": "/reactjs_sandbox/speedgame/static/js/runtime-main.39bfa74a.js",
+    "runtime-main.js.map": "/reactjs_sandbox/speedgame/static/js/runtime-main.39bfa74a.js.map",
+    "static/js/2.32734ff5.chunk.js": "/reactjs_sandbox/speedgame/static/js/2.32734ff5.chunk.js",
+    "static/js/2.32734ff5.chunk.js.map": "/reactjs_sandbox/speedgame/static/js/2.32734ff5.chunk.js.map",
+    "index.html": "/reactjs_sandbox/speedgame/index.html",
+    "static/css/main.8daf5bf6.chunk.css.map": "/reactjs_sandbox/speedgame/static/css/main.8daf5bf6.chunk.css.map",
+    "static/js/2.32734ff5.chunk.js.LICENSE.txt": "/reactjs_sandbox/speedgame/static/js/2.32734ff5.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/reactjs_sandbox/speedgame/static/media/14031728.709d10e8.jpg",
+    "static/media/bg.816ab20c.mp3": "/reactjs_sandbox/speedgame/static/media/bg.816ab20c.mp3",
+    "static/media/Circle.css": "/reactjs_sandbox/speedgame/static/media/flame.2a7fa768.png",
+    "static/media/gameover.067e16bc.mp3": "/reactjs_sandbox/speedgame/static/media/gameover.067e16bc.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.39bfa74a.js",
+    "static/js/2.32734ff5.chunk.js",
+    "static/css/main.8daf5bf6.chunk.css",
+    "static/js/main.2c30c271.chunk.js"
+  ]
+}
